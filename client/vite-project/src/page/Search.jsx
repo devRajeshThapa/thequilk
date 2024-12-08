@@ -6,6 +6,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 export default function Search() {
+  const IP = import.meta.env.VITE_IP;
+  const PORT = import.meta.env.VITE_PORT;
   const [searchparams, setsearchparams] = useSearchParams();
   const navigate = useNavigate();
   const [searchdata, setsearchdata] = useState([]);
@@ -25,7 +27,7 @@ export default function Search() {
       try {
         // Send the token to backend for validation
         const response = await axios.post(
-          "http://localhost:50001/upload/file/verifytoken",
+          `http://${IP}:${PORT}/upload/file/verifytoken`,
           {}, // No need to send data in the body, just the headers
           {
             headers: {
@@ -34,7 +36,6 @@ export default function Search() {
           }
         );
       } catch (error) {
-        console.error("Token verification failed:", error);
         navigate("/login");
       }
     };
@@ -45,11 +46,10 @@ export default function Search() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await axios.get("http://localhost:50001/upload/file");
+        const response = await axios.get(`http://${IP}:${PORT}/upload/file`);
         const reversedResponse = response.data.datas.reverse(); // Reverse the posts order
         setsearchdata(reversedResponse);
       } catch (error) {
-        console.error("Error fetching posts:", error);
       }
     };
 
@@ -89,7 +89,7 @@ const handlewishlist = async (e, id) => {
   try {
     // Make the API request to add the post to the wishlist using Axios
     const response = await axios.post(
-      "http://localhost:50001/upload/file/wishlist", // Endpoint for adding to wishlist
+      `http://${IP}:${PORT}/upload/file/wishlist`, // Endpoint for adding to wishlist
       { postid: id }, // Body with the postid
       {
         headers: {
@@ -118,7 +118,6 @@ const handlewishlist = async (e, id) => {
       alert("No response from the server. Please try again.");
     } else {
       // Something else caused the error
-      console.error("Error:", error.message);
       alert("An error occurred. Please try again.");
     }
   }
@@ -136,13 +135,13 @@ const handlewishlist = async (e, id) => {
             <FontAwesomeIcon icon={faHeart} className="trash" onClick={(e) => { handlewishlist(e, current._id) }} />
           </div>
           <div className="thumbnaildiv">
-            <img src={`http://localhost:50001/${current.thumbnail}`} alt="Selected" className="thumbnail" onClick={(e)=>{handledetail(e,current._id)}} />
+            <img src={`http://${IP}:${PORT}/${current.thumbnail}`} alt="Selected" className="thumbnail" onClick={(e)=>{handledetail(e,current._id)}} />
           </div>
         <div className="titlediv">
           <p className="ptitle">{current.title.length>30?current.title.slice(0,34)+"....":current.title}</p>
         </div>
         <div className="creatordiv">
-        <img src={`http://localhost:50001/${current.createdBy.profile}`} alt="Selected" className="creatorimage" onClick={(e)=>{handleprofile(e,current.createdBy._id)}} />
+        <img src={`http://${IP}:${PORT}/${current.createdBy.profile}`} alt="Selected" className="creatorimage" onClick={(e)=>{handleprofile(e,current.createdBy._id)}} />
         <p className="creatorname">{current.createdBy.name}</p>
         </div>
 
@@ -156,13 +155,13 @@ const handlewishlist = async (e, id) => {
             <FontAwesomeIcon icon={faHeart} className="trash" onClick={(e) => { handlewishlist(e, current._id) }} />
           </div>
           <div className="thumbnaildiv">
-            <img src={`http://localhost:50001/${current.thumbnail}`} alt="Selected" className="thumbnail" onClick={(e)=>{handledetail(e,current._id)}} />
+            <img src={`http://${IP}:${PORT}/${current.thumbnail}`} alt="Selected" className="thumbnail" onClick={(e)=>{handledetail(e,current._id)}} />
           </div>
         <div className="titlediv">
           <p className="ptitle">{current.title.length>30?current.title.slice(0,34)+"....":current.title}</p>
         </div>
         <div className="creatordiv">
-        <img src={`http://localhost:50001/${current.createdBy.profile}`} alt="Selected" className="creatorimage" onClick={(e)=>{handleprofile(e,current.createdBy._id)}} />
+        <img src={`http://${IP}:${PORT}/${current.createdBy.profile}`} alt="Selected" className="creatorimage" onClick={(e)=>{handleprofile(e,current.createdBy._id)}} />
         <p className="creatorname">{current.createdBy.name}</p>
         </div>
 

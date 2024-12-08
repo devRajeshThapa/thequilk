@@ -1,12 +1,15 @@
 import { useParams, useNavigate } from "react-router-dom";
 import Navbar from "../component/Navbar";
 import logo from "../assets/logo.png";
-import video from "../assets/video.mp4"
+import video from "../assets/video.mp4";
 import { useEffect, useState } from "react";
 import "./Review.css";
 import axios from "axios";
 
 export default function Review() {
+  const IP = import.meta.env.VITE_IP;
+  const PORT = import.meta.env.VITE_PORT;
+
   const { id } = useParams();
   const [infodata, setInfodata] = useState(null);
   const [mixdata, setMixdata] = useState([]);
@@ -14,11 +17,13 @@ export default function Review() {
   const [adsdata] = useState([
     {
       url: logo,
-      links: "https://www.amazon.in/stores/page/FB61ADA2-F77A-413C-97C9-BB74C754829D?channel=Search_store_AMZ&gad_source=1&gclid=CjwKCAiA0rW6BhAcEiwAQH28IuBGGZOg5s-1L8qQdc2Lq_DIssCwnkpLxZotQc5tSAVPDD6ZS9DNSBoCoxMQAvD_BwE",
+      links:
+        "https://www.amazon.in/stores/page/FB61ADA2-F77A-413C-97C9-BB74C754829D?channel=Search_store_AMZ&gad_source=1&gclid=CjwKCAiA0rW6BhAcEiwAQH28IuBGGZOg5s-1L8qQdc2Lq_DIssCwnkpLxZotQc5tSAVPDD6ZS9DNSBoCoxMQAvD_BwE",
     },
     {
       url: video,
-      links: "https://www.amazon.in/stores/page/FB61ADA2-F77A-413C-97C9-BB74C754829D?channel=Search_store_AMZ&gad_source=1&gclid=CjwKCAiA0rW6BhAcEiwAQH28IuBGGZOg5s-1L8qQdc2Lq_DIssCwnkpLxZotQc5tSAVPDD6ZS9DNSBoCoxMQAvD_BwE",
+      links:
+        "https://www.amazon.in/stores/page/FB61ADA2-F77A-413C-97C9-BB74C754829D?channel=Search_store_AMZ&gad_source=1&gclid=CjwKCAiA0rW6BhAcEiwAQH28IuBGGZOg5s-1L8qQdc2Lq_DIssCwnkpLxZotQc5tSAVPDD6ZS9DNSBoCoxMQAvD_BwE",
     },
   ]);
 
@@ -37,11 +42,13 @@ export default function Review() {
     }
     return result;
   };
-  
+
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await axios.get(`http://localhost:50001/upload/file/${id}`);
+        const response = await axios.get(
+          `http://${IP}:${PORT}/upload/file/${id}`
+        );
         setInfodata(response.data.postdata);
       } catch (error) {
         navigate("/");
@@ -50,9 +57,9 @@ export default function Review() {
 
     fetchPosts();
   }, [id, navigate]);
- const handleprofile=(e,id)=>{
-       navigate(`/profile/info/${id}`)
- }
+  const handleprofile = (e, id) => {
+    navigate(`/profile/info/${id}`);
+  };
   useEffect(() => {
     const checkTokenAndFetchData = async () => {
       const token = localStorage.getItem("token");
@@ -63,7 +70,7 @@ export default function Review() {
 
       try {
         await axios.post(
-          "http://localhost:50001/upload/file/verifytoken",
+          `http://${IP}:${PORT}/upload/file/verifytoken`,
           {},
           {
             headers: {
@@ -84,42 +91,75 @@ export default function Review() {
       const mixedData = mixArray(infodata.images, adsdata);
 
       setselectedimage(mixedData[0]);
-      setMixdata(mixedData)
+      setMixdata(mixedData);
     }
   }, [infodata, adsdata]);
   const handleselectedimage = (e, current) => {
-    setselectedimage(current)
-  }
+    setselectedimage(current);
+  };
 
   return (
     <div>
       <Navbar />
 
       <div className="detail">
-
         <div className="detaildiv">
           <div className="bigimagediv">
             {selectedimage &&
               (typeof selectedimage === "object" && selectedimage.url ? (
                 <>
                   {selectedimage.url.endsWith(".png") ? (
-                    <a href={selectedimage.links} target="_blank" rel="noreferrer">
-                      <img src={selectedimage.url} alt="Ad" className="bigimagepic" />
+                    <a
+                      href={selectedimage.links}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <img
+                        src={selectedimage.url}
+                        alt="Ad"
+                        className="bigimagepic"
+                      />
                     </a>
                   ) : (
-                    <a href={selectedimage.links} target="_blank" rel="noreferrer">
-                      <video controls muted autoPlay loop src={selectedimage.url} className="bigimagepic"></video>
+                    <a
+                      href={selectedimage.links}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <video
+                        controls
+                        muted
+                        autoPlay
+                        loop
+                        src={selectedimage.url}
+                        className="bigimagepic"
+                      ></video>
                     </a>
                   )}
                 </>
               ) : (
                 <>
                   {selectedimage?.endsWith(".png") ? (
-                    <img src={`http://localhost:50001/${selectedimage}`} alt="Post" className="bigimagepic" />
+                    <img
+                      src={`http://${IP}:${PORT}/${selectedimage}`}
+                      alt="Post"
+                      className="bigimagepic"
+                    />
                   ) : selectedimage?.endsWith(".mp4") ? (
-                    <video src={`http://localhost:50001/${selectedimage}`} controls muted autoPlay className="bigimagepic"></video>
-                  ) : selectedimage?.endsWith(".pdf") && (
-                    <iframe src={`https://docs.google.com/viewer?url=http://localhost:50001/${selectedimage}&embedded=true`} className="bigimagepic" ></iframe>
+                    <video
+                      src={`http://${IP}:${PORT}/${selectedimage}`}
+                      controls
+                      muted
+                      autoPlay
+                      className="bigimagepic"
+                    ></video>
+                  ) : (
+                    selectedimage?.endsWith(".pdf") && (
+                      <iframe
+                        src={`https://docs.google.com/viewer?url=http://localhost:50001/${selectedimage}&embedded=true`}
+                        className="bigimagepic"
+                      ></iframe>
+                    )
                   )}
                 </>
               ))}
@@ -127,7 +167,12 @@ export default function Review() {
           <div className="titlesdiv">
             {infodata && <p className="titles">{infodata.title}</p>}
           </div>
-          <div className="imagedivreview" style={{justifyContent:mixdata.length>5?"flex-start":"center"}}>
+          <div
+            className="imagedivreview"
+            style={{
+              justifyContent: mixdata.length > 5 ? "flex-start" : "center",
+            }}
+          >
             {mixdata.length > 0 &&
               mixdata.map((current, index) => {
                 // Check if it's an ad (adsdata)
@@ -139,22 +184,27 @@ export default function Review() {
                     current.url.endsWith(".jpeg")
                   ) {
                     return (
-
-                      <img src={current.url} alt="Ad" className="imageprev" onClick={(e) => { handleselectedimage(e, current) }} />
-
+                      <img
+                        src={current.url}
+                        alt="Ad"
+                        className="imageprev"
+                        onClick={(e) => {
+                          handleselectedimage(e, current);
+                        }}
+                      />
                     );
                   } else if (current.url.endsWith(".mp4")) {
                     return (
-
                       <video
                         src={current.url}
                         autoPlay
                         muted
                         loop
                         className="imageprev"
-                        onClick={(e) => { handleselectedimage(e, current) }}
+                        onClick={(e) => {
+                          handleselectedimage(e, current);
+                        }}
                       ></video>
-
                     );
                   }
                 } else {
@@ -167,44 +217,77 @@ export default function Review() {
                     return (
                       <img
                         key={index}
-                        src={`http://localhost:50001/${current}`}
+                        src={`http://${IP}:${PORT}/${current}`}
                         alt="Image"
                         className="imageprevdata"
-                        onClick={(e) => { handleselectedimage(e, current) }}
+                        onClick={(e) => {
+                          handleselectedimage(e, current);
+                        }}
                       />
                     );
                   } else if (current.endsWith(".mp4")) {
                     return (
-                      <video key={index} autoPlay muted loop className="imageprevdata" onClick={(e) => { handleselectedimage(e, current) }}>
-                        <source src={`http://localhost:50001/${current}`} />
+                      <video
+                        key={index}
+                        autoPlay
+                        muted
+                        loop
+                        className="imageprevdata"
+                        onClick={(e) => {
+                          handleselectedimage(e, current);
+                        }}
+                      >
+                        <source src={`http://${IP}:${PORT}/${current}`} />
                       </video>
                     );
                   } else if (current.endsWith(".pdf")) {
                     return (
-                      <button className="showbutton" onClick={e => { handleselectedimage(e, current) }}>Show Pdf</button>
+                      <button
+                        className="showbutton"
+                        onClick={(e) => {
+                          handleselectedimage(e, current);
+                        }}
+                      >
+                        Show Pdf
+                      </button>
                     );
                   }
                 }
                 return null;
               })}
           </div>
-          <div className="profiledivcontainer" >
-            {infodata && <><img src={"http://localhost:50001/" + infodata.createdBy.profile} alt="" className="profilepicture" onClick={(e)=>{handleprofile(e,infodata.createdBy._id)}} /> <p className="profilename">{infodata.createdBy.name}</p></>}
+          <div className="profiledivcontainer">
+            {infodata && (
+              <>
+                <img
+                  src={`http://${IP}:${PORT}/` + infodata.createdBy.profile}
+                  alt=""
+                  className="profilepicture"
+                  onClick={(e) => {
+                    handleprofile(e, infodata.createdBy._id);
+                  }}
+                />{" "}
+                <p className="profilename">{infodata.createdBy.name}</p>
+              </>
+            )}
           </div>
           <div className="descriptiondiv">
-            {infodata && <div> <p className="descriptiontext">*Description*: {infodata.description} *</p> </div>}
+            {infodata && (
+              <div>
+                {" "}
+                <p className="descriptiontext">
+                  *Description*: {infodata.description} *
+                </p>{" "}
+              </div>
+            )}
           </div>
         </div>
         <div className="sponsordivb">
           <h1 className="headingb">Sponsored</h1>
           <p className="paragraphb">contact:thequilk369@gmail.com</p>
           <div className="divsponrshipb"></div>
-         
         </div>
-
-       
       </div>
-
     </div>
   );
 }

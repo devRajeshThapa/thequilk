@@ -6,8 +6,9 @@ import "./Signup.css"
 import { useState } from "react"
 import axios from "axios";
 export default function Signup(){
+  const IP = import.meta.env.VITE_IP;
+  const PORT = import.meta.env.VITE_PORT;
 
- 
   const[email,setemail]=useState("");
   const[password,setpassword]=useState("");
   const[error,seterror]=useState("");
@@ -39,7 +40,7 @@ export default function Signup(){
   try {
     alert(email, password);
     const data = { email, password };
-    const response = await axios.post("http://localhost:50001/upload/file/login", data);
+    const response = await axios.post(`http://${IP}:${PORT}/upload/file/login`, data);
     if (response && response.data) {
       localStorage.setItem("token", response.data.token);
       navigate("/profile");
