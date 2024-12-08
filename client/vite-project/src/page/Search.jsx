@@ -106,7 +106,6 @@ const handlewishlist = async (e, id) => {
         alert("This post is already in your wishlist!");
       } else if (error.response.status === 403) {
         // If the token is invalid or expired, redirect to login
-        alert("Token is invalid or expired. Please log in again.");
         navigate("/login");
       } else {
         // For any other errors

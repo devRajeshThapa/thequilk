@@ -156,7 +156,7 @@ export default function Review() {
                   ) : (
                     selectedimage?.endsWith(".pdf") && (
                       <iframe
-                        src={`https://docs.google.com/viewer?url=http://localhost:50001/${selectedimage}&embedded=true`}
+                        src={`https://docs.google.com/viewer?url=http://${IP}:${PORT}/${selectedimage}&embedded=true`}
                         className="bigimagepic"
                       ></iframe>
                     )

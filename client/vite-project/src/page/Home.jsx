@@ -89,7 +89,7 @@ export default function Home() {
           error.response.status === 400 &&
           error.response.data.message === "Post is already in your wishlist"
         ) {
-          alert("This post is already in your wishlist!");
+          alert("Thidds post is already in your wishlist!");
         } else if (error.response.status === 403) {
           // If the token is invalid or expired, redirect to login
           alert("Token is invalid or expired. Please log in again.");
@@ -129,7 +129,6 @@ export default function Home() {
             },
           }
         );
-        alert(response.data.userId);
         // If token is valid, save the user data
         setuserid(response.data.userId);
       } catch (error) {

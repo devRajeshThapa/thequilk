@@ -38,7 +38,6 @@ export default function Signup(){
   }
 
   try {
-    alert(email, password);
     const data = { email, password };
     const response = await axios.post(`http://${IP}:${PORT}/upload/file/login`, data);
     if (response && response.data) {
