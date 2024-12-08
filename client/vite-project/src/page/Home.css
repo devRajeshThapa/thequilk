@@ -1,0 +1,284 @@
+.home{
+  height: 100vh;
+}
+.postcontainer{
+  width: 100%;
+  display: flex;
+  height: 100vh;
+  box-shadow: 10px 10px 10px 10px rgb(174, 164, 164),inset -30px 30px 20px rgb(207,204,204);
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow: scroll;
+  overflow-x: hidden;
+  border: none;
+}
+.postcontainer::-webkit-scrollbar {
+  width: 8px;  
+ 
+}
+
+.postcontainer::-webkit-scrollbar-track {
+  background-color: rgb(207,204,204);
+  border-radius: 10px;  
+  box-shadow: 10px 10px 10px 10px rgb(228, 223, 223);
+  display: none;
+}
+
+.postcontainer::-webkit-scrollbar-thumb {
+  background-color: #888;  
+  border-radius: 10px;  
+  height: 15px;
+ 
+}
+
+.postcontainer::-webkit-scrollbar-thumb:hover {
+  background-color: #555;  
+ 
+}
+.postcontainer .contentdivsponsored{
+  border: 3px solid black;
+  width: 310px;
+  height: 300px;
+  margin-left: 30px;
+  margin-right: 20px;
+  margin-top: 10px;
+  margin-bottom:10px;
+  box-shadow: 10px 10px 10px 10px silver,inset 10px 10px 10px rgb(207,204,204);
+  border-radius: 5%;
+  border: none;
+}
+.contentdivsponsored .shows{
+  border: 1px solid black;
+  border: none;
+}
+.shows .showimage{
+  width: 290px;
+  height: 200px;
+  border: 1px solid blue;
+  box-shadow: 10px 10px 10px 10px silver,inset 10px 10px 10px rgb(207,204,204);
+  border: none;
+  border-radius: 7%;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+.showimage:hover{
+  transform: scale(1.01);
+}
+.contentdivsponsored .title{
+  border: 1px solid black;
+  border: none;
+  margin-top: 3px;
+}
+.title .currenttitle{
+  border: 1px  solid black;
+  height: 50px;
+  font-family: cursive;
+  font-weight: 500;
+  font-style: italic;
+  text-align: center;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border: none;
+}
+.contentdivsponsored .creatordiv{
+  display: flex;
+  border: 1px solid black;
+  align-items: center;
+  border: none;
+}
+.creatordiv .userimage{
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  margin-left: 30px;
+  margin-right: 40px;
+  box-shadow: 10px 10px 10px 10px silver,inset 10px 10px 10px rgb(207,204,204);
+}
+.userimage:hover{
+  transform: scale(1.05);
+}
+.usernames{
+  font-family: cursive;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 500;
+  border: 1px solid black;
+  border: none;
+}
+.creatordiv .showlink{
+  text-decoration: none;
+  color: black;
+  font-family: cursive;
+  font-style: italic;
+  font-size: large;
+  font-weight: 500;
+  margin-left: 30px;
+  border-radius: 17px;
+  color: black;
+  width: 70px;
+  color: red;
+  background-color: white;
+  outline: none;
+  box-shadow: 10px 10px 10px 10px rgb(156, 154, 154);
+  border: 1px solid black;
+  border: none;
+  }
+  .showlink:hover{
+    transform: scale(1.05);
+  }
+  .postcontainer .container{
+    border: 3px solid black;
+    width: 310px;
+    height: 295px;
+    margin-left: 30px;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom:10px;
+    position: relative;
+    border: none;
+    border-radius: 5%;
+    box-shadow: 10px 10px 10px 10px silver,inset 10px 10px 10px rgb(207,204,204);
+    }
+    .container .removediv{
+      display: flex;
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      border:1px solid red;
+      right: 18px;
+      border-radius: 50%;
+      align-items: center;
+      border: none;
+      z-index: 1;
+    }
+    .removediv .trash{
+      width: 20px;
+      height: 20px;
+      padding: 7px;
+      border-radius: 50%;
+      box-shadow: 10px 10px 10px black;
+      border: none;
+    }
+    .trash:hover{
+      color: red;
+      transform: scale(1.05);
+    }
+    .container .thumbnaildiv{
+      border: 3px solid black;
+      display: flex;
+      align-items: center;
+      margin-top: 5px;
+      margin-left: 8px;
+      border: none;
+    }
+    .thumbnaildiv .thumbnail{
+      width: 290px;
+      height: 200px;
+      border: 1px solid blue;
+      box-shadow: 10px 10px 10px 10px silver,inset 10px 10px 10px rgb(207,204,204);
+      border-radius: 7%;
+     border: none;
+    }
+    .thumbnail:hover{
+      transform: scale(1.007);
+    }
+    .container .titlediv{
+      margin-top: 9px;
+      border: 1px solid black;
+      border: none;
+    }
+    .titlediv .ptitle{
+      border: 1px  solid black;
+      font-family: cursive;
+      font-weight: 500;
+      font-style: italic;
+      text-align: center;
+      color: black;
+      border: none;
+    }
+    .container .creatordiv{
+      border: 1px solid black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+    }
+    .creatordiv .creatorimage{
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 1px solid black;
+      box-shadow: 10px 10px 10px black;
+      border: none;
+    }
+    .creatordiv .creatorname{
+      font-family: cursive;
+      font-weight: 500;
+      font-style: italic;
+      text-align: start;
+      border: 1px solid black;
+      margin-left: 20px;
+      border: none;
+     
+    }
+
+
+
+.nodiv{
+  border: 1px solid red;
+  margin-top: 30px;
+  border: none;
+}
+.nocontent{
+  border: 1px solid black;
+  font-family: cursive;
+  font-size: large;
+  font-weight: 500;
+  text-shadow: 10px 10px 10px black;
+  font-style: italic;
+  width: 300px;
+  height: 30px;
+  border: none;
+}
+@media screen and (max-width: 760px) {
+  .postcontainer .container {
+    width: 400px; /* Adjust width for mobile devices */
+    margin: 10px auto; /* Center the container horizontally */
+    height: 300px;
+    background-color:rgb(240,240,240);
+    
+  }
+  .postcontainer .contentdivsponsored{
+    width: 400px; /* Adjust width for mobile devices */
+    margin: 10px auto; /* Center the container horizontally */
+    height: 300px;
+    background-color:rgb(240,240,240);
+   
+  }
+  .shows{
+    box-shadow: none;
+  }
+  .shows .showimage{
+    width: 97%;
+    box-shadow: none;
+  }
+ .thumbnaildiv{
+  box-shadow: none;
+ }
+  .thumbnaildiv .thumbnail {
+    width: 100%; /* Ensure thumbnail scales to the container */
+    border: 1px solid black;
+    box-shadow: none;
+    border: none;
+  }
+.container .creatordiv{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    border: 1px solid black;
+    border: none;
+  }
+}

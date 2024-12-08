@@ -1,0 +1,150 @@
+.navbar {
+  border: 1px solid green;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  border: none;
+  box-sizing: border-box;
+  background-color: white;
+  box-shadow: 10px 10px 10px rgb(201, 194, 194);
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.link:hover {
+  color: inherit;
+}
+
+.navbar .start {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  border: none;
+  margin-left: 10px;
+}
+
+.start .image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 0 40px; /* Horizontal margins */
+  box-shadow: 10px 10px 10px 5px rgb(226, 222, 222);
+  border: none;
+}
+
+.start .heart {
+  height: 20px;
+  width: 20px;
+  padding: 7px;
+  border-radius: 50%;
+  margin-right: 40px; /* Adjust this dynamically */
+  box-shadow: 10px 10px 10px black, inset 10px 10px 10px rgb(207, 204, 204);
+  border: none;
+}
+
+.start .heart:hover {
+  color: red;
+}
+
+.middle {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  border: none;
+}
+
+.middle .input {
+  height: 40px;
+  border-radius: 33px;
+  width: 450px; /* Default width */
+  font-style: italic;
+  text-align: center;
+  font-family: cursive;
+  font-size: large;
+  background-color: white;
+  font-weight: 500;
+  text-shadow: 10px 10px 10px rgb(91, 83, 83);
+  box-shadow: 10px 10px 10px 5px rgb(226, 222, 222), inset 10px 10px 10px rgb(207, 204, 204);
+  outline: none;
+  border: none;
+}
+
+.input::placeholder {
+  color: black;
+  text-align: center;
+  text-shadow: 10px 10px 10px black;
+}
+
+.middle .searchdiv {
+  height: 42.3px;
+  width: 42px;
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  box-shadow: 10px 10px 10px 5px rgb(226, 222, 222), inset 10px 10px 10px rgb(207, 204, 204);
+  border: none;
+}
+
+.middle .search {
+  height: 20px;
+  width: 20px;
+  padding: 7px;
+  border-radius: 50%;
+  margin-left: 0px;
+  border: none;
+}
+
+.middle .search:hover {
+  color: red;
+  transform: scale(1.1);
+}
+
+.end {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  border: none;
+}
+
+.end .users,
+.end .user {
+  padding: 7px;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  box-shadow: 10px 10px 10px black, inset 10px 10px 10px rgb(207, 204, 204);
+  margin: 0 40px; /* Horizontal margin */
+}
+
+.users:hover,
+.user:hover {
+  color: red;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1200px) {
+  .start .image,
+  .start .heart,
+  .end .users,
+  .end .user {
+    margin: 0 20px; /* Reduce margins for smaller screens */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .start .image,
+  .start .heart,
+  .end .users,
+  .end .user {
+    margin: 0 10px; /* Minimum margin */
+  }
+  .middle .input {
+    width: 100%; /* Input takes full width */
+    max-width: 300px; /* Ensure a readable size */
+  }
+}

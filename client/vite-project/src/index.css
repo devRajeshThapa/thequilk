@@ -1,0 +1,28 @@
+body{
+  background-color: rgb(240,240,240);
+
+}
+.main{
+  height: 100vh;
+  border: 3px solid black;
+  overflow: hidden;
+  border: none;
+}
+.main::-webkit-scrollbar {
+  width: 10px;  /* Width of the vertical scrollbar */
+  display: none;
+}
+
+.main::-webkit-scrollbar-track {
+  background-color: black;
+  border-radius: 10px;  /* Rounded corners for the track */
+  box-shadow: 10px 10px 10px 10px rgb(228, 223, 223);
+  display: none;
+}
+
+.main::-webkit-scrollbar-thumb {
+  background-color: #888;  /* Color of the draggable scrollbar thumb */
+  border-radius: 10px;  /* Rounded corners for the thumb */
+  height: 10px;
+  display: none;
+}

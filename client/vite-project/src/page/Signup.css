@@ -1,0 +1,251 @@
+.signup {
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw; 
+  height: 100vh; 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.signup::-webkit-scrollbar {
+  width: 8px;  
+  display: none;
+}
+
+.signup::-webkit-scrollbar-track {
+  background-color: rgb(207,204,204);
+  border-radius: 10px;  
+  box-shadow: 10px 10px 10px 10px rgb(228, 223, 223);
+  display: none;
+}
+
+.signup::-webkit-scrollbar-thumb {
+  background-color: #888;  
+  border-radius: 10px;  
+  height: 15px;
+  display: none;
+}
+
+.signup::-webkit-scrollbar-thumb:hover {
+  background-color: #555;  
+  display: none;
+}
+
+.signup .signupcontainer {
+  width: 400px;
+  border: 1px solid black;
+  box-shadow: 10px 10px 10px  rgb(176, 169, 169),-10px -10px 10px rgb(207,204,204);
+ 
+  border: none;
+  height: 680px;
+}
+
+.signup .photo{
+  border: 1px solid black;
+  height:180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  border: none;
+}
+.photo .profile{
+  display: none;
+}
+.profileimage{
+  border: 1px solid green;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  padding: 20px;
+  color: gray;
+  background-color: transparent;
+  box-shadow: 10px 10px 10px rgb(153, 149, 149),-10px -10px 10px rgb(153, 149, 149);
+  border: none;
+}
+.profileimage:hover{
+  transform: scale(1.03);
+}
+.profilerealimage{
+  height: 130px;
+  width: 130px;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 10px 10px 10px rgb(153, 149, 149),-10px -10px 10px rgb(153, 149, 149);
+}
+.profilerealimage:hover{
+  transform: scale(1.03);
+  filter: grayscale(1);
+}
+.signup .info{
+  border: 3px solid green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  border: none;
+}
+.info .form{
+  width: 700px;
+  border: 1px solid black;
+  border: none;
+  height: 369px;
+}
+.form .name,.email,.phoneno,.education,.password,.confirmpass{
+  height: 50px;
+  border: 1px solid black;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+.info .error{
+  border: 1px solid red;
+  margin-top: 10px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+.icon{
+  width: 20px;
+  height: 20px;
+  padding: 7px;
+  border: 1px solid black;
+  border-radius: 50%;
+  margin-right: 20px;
+  border: none;
+  box-shadow: 10px 10px 10px  black;
+}
+.icon:hover{
+  transform: scale(1.1);
+  color: red;
+}
+.inputinfo{
+  border: 1px solid black;
+  outline: none;
+  height: 30px;
+  width: 300px;
+  font-family: cursive;
+  font-style: italic;
+  font-weight: 500;
+  font-size:14px;
+  border: none;
+  border-radius: 13px;
+  text-shadow: 10px 10px 10px black;
+  text-align: center;
+  box-shadow: 10px 10px 10px rgb(153, 149, 149),inset 10px 10px 10px rgb(207,204,204);
+}
+.inputinfo::placeholder{
+  color: black;
+  text-align: center;
+}
+.errorparagraph{
+  border: 1px solid black;
+
+  font-family: cursive;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 14px;
+  font-family: cursive;
+  text-shadow: 10px 10px 10px black;
+  text-align: center;
+  width: 400px;
+  border: none;
+
+}
+.submit{
+  border: 1px solid black;
+  margin-top: 10px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+.submit .submitbutton{
+  height: 30px;
+  width: 111px;
+  margin-left: 20px;
+  font-family: cursive;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 14px;
+  text-shadow: 10px 10px 10px black;
+  box-shadow: 10px 10px 10px black;
+  border-radius: 17px;
+  border: none;
+}
+.submitbutton:hover{
+transform: scale(1.03);
+color: red;
+}
+.form .or{
+  display: flex;
+  border: 1px solid red;
+  height: 50px;
+  margin-top: 30px;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+.orbutton{
+font-family: cursive;
+font-size: large;
+font-weight: 500;
+font-style: italic;
+border: 1px solid black;
+width: 40px;
+height: 40px;
+border-radius: 50%;
+margin-left: 30px;
+box-shadow: 10px 10px 10px black;
+text-shadow: 10px 10px 10px black;
+border: none;
+}
+
+.create{
+  border: 1px solid black;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 30px;
+  align-items: center;
+  border: none;
+}
+.create .createbutton{
+ font-family: cursive;
+ font-style: italic;
+ font-size: 14px;
+ font-weight: 500;
+ text-shadow: 10px 10px 10px black;
+ box-shadow: 10px 10px 10px  black;
+ width: 250px;
+ height: 40px;
+ border-radius: 15px;
+ border: none;
+}
+.createbutton:hover{
+  transform: scale(1.05);
+  color: red;
+}
+.circleleft{
+  width: 20px ;
+  height: 20px;
+  box-shadow: 10px 10px 10px black;
+  border-radius: 50%;
+  border: none;
+  padding: 7px;
+  color: black;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+.circleleft:hover{
+  transform: scale(1.1);
+  color: red;
+}

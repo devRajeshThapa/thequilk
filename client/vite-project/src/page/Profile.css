@@ -1,0 +1,832 @@
+.inputcontainer{
+  width: 100%;
+  height: 100vh;
+  box-sizing:border-box;
+border: 3px solid blue;
+  display: flex;
+  overflow: scroll;
+  overflow-x: hidden;
+  border: none;
+}
+
+.inputcontainer::-webkit-scrollbar {
+  width: 8px;  
+  display: none;
+}
+
+.inputcontainer::-webkit-scrollbar-track {
+  background-color: rgb(207,204,204);
+  border-radius: 10px;  
+  box-shadow: 10px 10px 10px 10px rgb(228, 223, 223);
+  display: none;
+}
+
+.inputcontainer::-webkit-scrollbar-thumb {
+  background-color: #888;  
+  border-radius: 10px;  
+  height: 15px;
+ display: none;
+}
+
+.inputcontainer::-webkit-scrollbar-thumb:hover {
+  background-color: #555;  
+  display: none;
+}
+.imagefilldiv{
+ width: 60%;
+ border: 3px solid brown;
+ height: 100vh;
+ overflow:hidden;
+ overflow-y: scroll;
+ border: none;
+
+}
+.imagefilldiv::-webkit-scrollbar {
+  width: 8px;  
+  display: none;
+}
+
+.imagefilldiv::-webkit-scrollbar-track {
+  background-color: rgb(207,204,204);
+  border-radius: 10px;  
+  box-shadow: 10px 10px 10px 10px rgb(228, 223, 223);
+  display: none;
+}
+
+.imagefilldiv::-webkit-scrollbar-thumb {
+  background-color: #888;  
+  border-radius: 10px;  
+  height: 15px;
+  display: none;
+}
+
+.imagefilldiv::-webkit-scrollbar-thumb:hover {
+  background-color: #555;  
+  display: none;
+}
+.inputclass{
+  display: none;
+}
+.inputselector{
+  align-items: center;
+  margin-right: 20px;
+  display: flex;
+  border: none;
+  box-shadow: none;
+}
+
+.inputselector .plus{
+  padding: 7px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  box-shadow: 10px 10px 10px 10px black,inset 10px 10px 10px rgb(207,204,204);
+}
+.plus:hover{
+  color: red;
+  transform: scale(1.1);
+}
+.inputholder{
+  display: flex;
+  border: none;
+  height: 410px;
+  align-items: center;
+  width: 600px;
+  border: 3px solid black;
+  margin-top: 20px;
+  border: none;
+}
+.inputpic {
+  border: 1px solid black;
+  width: 200px;
+  height: 400px;
+  overflow-y: auto; 
+  display: flex;
+  flex-direction: column;
+  margin-left: 5px;
+  border: none;
+}
+
+/* Style the scrollbar */
+.inputpic::-webkit-scrollbar {
+  width: 8px;  /* Width of the vertical scrollbar */
+  display: none;
+}
+
+.inputpic::-webkit-scrollbar-track {
+  background-color: rgb(207,204,204);
+  border-radius: 10px;  /* Rounded corners for the track */
+  box-shadow: 10px 10px 10px 10px rgb(228, 223, 223);
+  display: none;
+}
+
+.inputpic::-webkit-scrollbar-thumb {
+  background-color: #888;  /* Color of the draggable scrollbar thumb */
+  border-radius: 10px;  /* Rounded corners for the thumb */
+  height: 15px;
+  display: none;
+}
+
+.inputpic::-webkit-scrollbar-thumb:hover {
+  background-color: #555;  /* Color of the thumb on hover */
+  display: none;
+}
+.displayp{
+  font-family: cursive;
+  font-size: large;
+  font-style: italic;
+  font-weight: 500;
+  text-shadow: 10px 10px 10px black;
+}
+.inputpic .divimage{
+  border: 2px solid blue;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 18px;
+  margin-left: 25px;
+  margin-top: 18px;
+  border: none;
+  box-shadow: 10px 10px 10px black;
+}
+.divimage:hover{
+  transform: scale(1.1);
+}
+.divimagetwo{
+  border: 1px solid black;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 18px;
+  margin-left: 25px;
+  margin-top: 18px;
+  box-shadow: 10px 10px 10px black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+.divimagetwo:hover{
+  transform: scale(1.1);
+}
+.divimagetwo .uploadparagraph{
+  font-family: cursive;
+  font-weight: 500;
+  font-style: italic;
+  text-shadow: 10px 10px 10px black;
+}
+.divimage .imageshow{
+  width: 150px;
+  height: 150px;
+  border: 1px solid green;
+  border: none;
+}
+.divimage .imageshowpdf{
+  height: 140px;
+  width: 140px;
+  border: 1px solid blue;
+  border: none;
+  overflow: hidden;
+
+}
+
+.showresult{
+border: 1px solid black;
+margin-top: 50px;
+outline: none;
+border: none;
+}
+.showresult .showresultonly{
+  width: 300px;
+height: 300px;
+box-shadow: 10px 10px 10px black,inset 10px 10px 10px rgb(207,204,204);
+border: 3px solid black;
+border: none;
+}
+.showresultonly:hover{
+  transform: scale(1.02);
+}
+.showresult .bigshowimage{
+  width: 300px;
+  height: 300px;
+  box-shadow: 10px 10px 10px black,inset 10px 10px 10px rgb(207,204,204);
+}
+.bigshowimage:hover{
+  transform: scale(1.03);
+}
+.showresult .bigshowvideo{
+  width: 300px;
+  height: 300px;
+  box-shadow: 10px 10px 10px black,inset 10px 10px 10px rgb(207,204,204);
+}
+.bigshowvideo:hover{
+  transform: scale(1.03);
+}
+.imagefilldiv .detaildiv{
+border: 3px solid black;
+width: 600px;                                    
+height: 350px;
+border: none;
+}
+
+.showresult .title{
+  border: 1px solid black;
+  display: flex;
+  height: 40px;
+  align-items: center;
+  margin-left: 10px;
+  border: none;
+}
+.title .titleinput{
+  border: none;
+  outline: none;
+  border-bottom: 1px solid black;
+  text-align: center;
+  font-family: cursive;
+  font-size: large;
+  font-style: italic;
+  outline: none;
+  font-weight: 500;
+  background-color: transparent;
+  text-shadow: 10px 10px 10px black;
+}
+.titleinput::placeholder{
+  color: black;
+}
+.thumbnail .description {
+  border: 3px solid black;
+  display: flex;
+  align-items: center;
+  height: 160px;
+  width: 300px;
+  margin-left: 16px;
+  border: none;
+}
+
+.description .descriptioninput {
+  border: 1px solid blue;
+  outline: none;
+  text-align: start;
+  font-family: cursive;
+  font-size: large;
+  color: black;
+  font-style: italic;
+  font-weight: 500;
+  width: 365px;
+  background-color: transparent;
+  resize: none;  
+  overflow-y: auto;
+  line-height: 1.5;
+  text-shadow: 10px 10px 10px black;
+  
+  margin-left: 5px;
+  word-wrap: break-word; 
+  min-height: 20px; 
+  max-height: 160px; /* Restricting height to 160px */
+  padding-top: 0;
+  padding-bottom: 0; /* Remove extra padding */
+  border: none;
+}
+
+
+.descriptioninput::placeholder {
+  color: black;
+  text-align: start;
+  text-shadow: 10px 10px 10px black;
+}
+
+.descriptioninput::-webkit-scrollbar {
+  width: 8px;  
+  display: none;
+}
+
+.descriptioninput::-webkit-scrollbar-track {
+  background-color: rgb(207,204,204);
+  border-radius: 10px;  /* Rounded corners for the track */
+  box-shadow: 10px 10px 10px 10px rgb(228, 223, 223);
+  display: none;
+}
+
+.descriptioninput::-webkit-scrollbar-thumb {
+  background-color: #888;  /* Color of the draggable scrollbar thumb */
+  border-radius: 10px;  /* Rounded corners for the thumb */
+  height: 15px;
+  display: none;
+}
+.detaildiv .thumbnail{
+  border: 3px solid green;
+  display: flex;
+  align-items: center;
+  height: 200px;
+  width: 600px;
+  margin-top: 10px;
+  border: none;
+}
+
+
+.thumbnail .selectthumbnail{
+  border: 1px solid black;
+  margin-top: -25px;
+  border: none;
+}
+.selectthumbnail .thumbnailinput{
+  display: none;
+}
+.selectthumbnail .iconplus{
+ padding: 7px;
+ width: 20px;
+ height: 20px;
+ border-radius: 50%;
+ box-shadow: 10px 10px 10px 10px black;
+}
+.iconplus:hover{
+  color: red;
+  transform: scale(1.1);
+}
+.thumbnail .uploadthumbnail{
+  margin-left: 25px;
+  border: 5px solid blue;
+  margin-right: 30px;
+  box-shadow:10px 10px 10px black;
+ border: none;
+}
+.uploadthumbnail:hover{
+  transform: scale(1.03);
+}
+.uploadthumbnail .imageclass{
+  width: 150px;
+  height: 150px;
+  box-shadow: 10px 10px 10px 10px  black;
+  border: none;
+}
+.imageclass:hover{
+  transform: scale(1.03);
+}
+.uploaded{
+  width: 170px;
+  height: 170px;
+  box-shadow: 10px 10px 10px black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ border: 3px solid black;
+ border: none;
+}
+
+
+.divimage .uploadparagraph{
+  border: 1px solid black;
+  font-weight: 500;
+  font-style: italic;
+  font-family: cursive;
+  text-shadow: 10px 10px 10px black;
+  text-align: center;
+}
+.uploaded .paragraph{
+  font-family: cursive;
+  font-size: large;
+  font-weight: 500;
+  font-style: italic;
+ 
+  text-shadow: 10px 10px 10px black;
+  text-align: center;
+}
+
+.detaildiv .finish{
+  margin-top: 30px;
+  border: 1px solid black;
+  display: flex;
+  margin-top: 30px;
+  align-items: center;
+ border: none;
+}
+.finish .button{
+  border: 1px solid black;
+  font-family: cursive;
+  font-style: italic;
+  font-size: large;
+  font-weight: 500;
+  border: none;
+  outline: none;
+  height: 40px;
+  width: 130px;
+  margin-left: 340px;
+  text-align: center;
+  border-radius: 5px;
+  text-shadow: 10px 10px 10px black;
+  box-shadow: 10px 10px 10px 10px black;
+}
+.button:hover{
+  transform: scale(1.1);
+}
+.inputcontainer .inputpost{
+  width: 985px;
+  height: 100vh;
+  overflow: hidden;
+  overflow-y: scroll;
+  margin-left: 0px;
+  box-sizing: content-box;
+  border: 3px solid black;
+  border: none;
+}
+.inputpost::-webkit-scrollbar {
+  width: 8px;  
+  display: none;
+}
+
+.inputpost::-webkit-scrollbar-track {
+  background-color: rgb(207,204,204);
+  border-radius: 10px; 
+  box-shadow: 10px 10px 10px 10px rgb(228, 223, 223);
+  display: none;
+}
+
+.inputpost::-webkit-scrollbar-thumb {
+  background-color: #888;  
+  border-radius: 10px;  
+  height: 15px;
+  display: none;
+}
+
+.inputpost::-webkit-scrollbar-thumb:hover {
+  background-color: #555;  
+  display: none;
+}
+.inputpost .collection{
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  margin-top: 10px;
+}
+.collection .collectionheading{
+width: 111px;
+text-shadow: 10px 10px 10px black;
+}
+.inputpost .postholder{
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;;
+}
+.postholder .postdiv{
+width: 200px;
+border: none;
+margin-top: 15px;
+margin-bottom: 15px;
+margin-left: 30px;
+margin-right: 15px;
+border: 1px solid black;
+
+border: none;
+}
+.postdiv .showpostanddelete{
+  height: 200px;
+  width: 200px;
+  border: none;
+  display: flex;
+  border: 1px solid green;
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  border: none;
+}
+.showpostanddelete:hover{
+  transform: scale(1.03);
+}
+.showpostanddelete .show{
+width: 200px;
+height: 200px;
+border: 1px solid black;
+border: none;
+border-radius: 15%;
+}
+.show .showimage{
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
+}
+.showpostanddelete .delete{
+width: 50px;
+height: 50px;
+margin-left: -35px;
+z-index: 1;
+border: 1px solid black;
+border: none;
+}
+.delete .trash{
+  width: 20px;
+  height: 20px;
+  padding: 7px;
+  background-color: black;
+  color: black;
+  border-radius: 50%;
+  background-color: transparent;
+  box-shadow: 10px 10px 10px black,inset -10px -10px 10px 10px rgb(207,204,204);
+}
+.postdiv .title{
+  border: 1px solid black;
+  align-items: center;
+  margin-top: 15px;
+  display: flex;
+  border: 1px solid red;
+  width: 207px;
+  border: none;
+}
+.title .ptitle{
+  font-family: cursive;
+  font-size: medium;
+  font-weight: 500;
+  height: 45px;
+  width:207px;
+  text-align: center;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow: hidden;
+  font-style: italic;
+  text-overflow: ellipsis;
+  text-shadow: 10px 10px 10px black;
+  text-wrap: wrap;
+}
+.wrongparagraph{
+  font-family: cursive;
+  font-size: large;
+  font-weight: 500;
+  font-style: italic;
+  text-shadow: 10px 10px 10px black;
+  margin-left: 400px;
+  margin-top: 200px;
+}
+.inputcontainer .sponsordiv{
+  border: 3px solid blue;
+  overflow: hidden;
+  box-shadow: 10px 10px 10px 10px rgb(174, 164, 164),inset -30px 30px 20px rgb(207,204,204);
+  display: none;
+  height: 100vh;
+  border: none;
+}
+.sponsordiv .heading{
+  border: 1px solid black;
+  text-align: center;
+  text-shadow: 10px 10px 10px black;
+  border: none;
+}
+.sponsordiv .paragraph{
+  font-family: cursive;
+  font-size: large;
+  font-weight: 700;
+  font-style: italic;
+  text-shadow: 10px 10px 10px black;
+  margin-top: 20px;
+  text-align: center;
+  border: none;
+}
+ .sponsordiv .imagesponsor{
+  border: 1px solid black;
+  width: 337px;
+  margin-top: 30px;
+  height: 790px;
+  border: none;
+}
+.sponsordiv .divsponrship{
+  border: 1px solid black;
+  width: 100%;
+  height:100vh;
+  margin-top:15px;
+  box-shadow: 10px 10px 10px black;
+  border: none;
+}
+@media screen and (min-width: 1450px) {
+ 
+  .inputcontainer  .imagefilldiv {
+      width: 40%;
+    }
+    .inputcontainer .inputpost{
+      width: 45%;
+    }
+   .inputcontainer .sponsordiv {
+      width: 15%;
+      display: block; 
+    }
+  }
+  @media screen and (min-width: 1200px) and (max-width: 1450px) {
+    .inputcontainer .imagefilldiv {
+      width: 50%;
+      border: none;
+    }
+    .inputcontainer .inputpost {
+      width: 30%;
+    }
+    .inputcontainer .sponsordiv {
+      width: 20%;
+      display: block;
+    }
+  }
+  @media screen and (min-width: 760px) and (max-width: 1200px) {
+    .inputcontainer .imagefilldiv {
+      width: 75%;
+          }
+    .inputcontainer .inputpost {
+      width: 25%;
+    }
+  }
+  @media screen  and (max-width: 760px) {
+    .inputcontainer{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      border: 3px solid black;
+      border: none;
+    }
+    .inputcontainer .imagefilldiv {
+      width: 100%;
+      border: 5px solid black;
+      height: 1600px;
+      border: none;
+    }
+    .imagefilldiv .inputholder{
+      border: 3px solid red;
+      margin-top: -20px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: none;
+    }
+    .inputholder .showresult{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid green;
+      margin-top: 8px;
+      border: none;
+    }
+    .showresult .bigshowvideo{
+      width: 200px;
+      height: 200px;
+      border-radius: 12px;
+      box-shadow: 10px 10px 10px rgb(157, 152, 152);
+      border: none;
+    }
+    .showresult .bigshowimage{
+      width: 200px;
+      height: 200px;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 10px 10px 10px rgb(157, 152, 152);
+      border: none;
+    }
+    .showresult .showresultonly{
+      border: 2px solid yellow;
+      width: 200px;
+      height: 200px;
+      margin-top: 0px;
+      border-radius: 12px;
+      border: none;
+      box-shadow: 10px 10px 10px rgb(157, 152, 152);
+    }
+    .inputholder .inputselector{
+      border: 1px solid blue;
+      margin-left: 50px;
+      border: none;
+    }
+    .inputselector .plus{
+      box-shadow: 10px 10px 10px rgb(224, 212, 212);
+    }
+    .inputholder .inputpic{
+      border: 1px solid black;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      border: none;
+    }
+    .inputpic .divimage{
+      width: 90px;
+      height: 90px;
+      border-radius: 17px;
+      box-shadow: none;
+      border: none;
+    }
+    .divimage .imageshow{
+      width: 90px;
+      height: 90px;
+      border: 1px solid yellow;
+      border-radius: 17px;
+      border: none;
+      box-shadow: 10px 10px 10px rgb(157, 152, 152);
+    }
+    .inputpic .manager{
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    
+    }
+    .inputpic .divimagetwo{
+      width: 90px;
+      height: 90px;
+      border-radius: 17px;
+      border: none;
+      box-shadow: 10px 10px 10px rgb(157, 152, 152);
+    }
+    .inputcontainer .inputpost {
+      width: 100%;
+      margin-top: 10px;
+      border: 3px solid blue;
+      border: none;
+      box-shadow: 10px 10px 10px 10px black;
+    }
+    .imagefilldiv .detaildiv{
+      width: 100%;
+      border: 6px solid skyblue;
+      display: flex;
+      margin-top: 30px;
+      flex-direction: column;
+      align-items: center;
+      border: none;
+    }
+    .detaildiv .thumbnail{
+      border: 3px solid red;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      height: 100px;
+      border: none;
+    }
+    .thumbnail .uploadthumbnail{
+      border: 1px solid blue;
+      border-radius: 17px;
+      width: 15%;
+      margin-left: 5px;
+      box-shadow: none;
+      border: none;
+    }
+    .uploadthumbnail .uploaded{
+      width: 100px;
+      height: 100px;
+      margin-left: 0px;
+      border-radius: 17px;
+      box-shadow:10px 10px 10px rgb(169, 163, 163);
+    }
+    .uploadthumbnail .imageclass{
+      width: 100px;
+      height: 100px;
+      border-radius: 17px;
+      margin-left: 0px;
+      border:none;
+    }
+   .detaildiv .finish{
+    width: 100%;
+    margin: 10px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border: none;
+   }
+   .finish .button{
+    margin-left: 0px;
+    border: none;
+    box-shadow: 10px 10px 10px rgb(140, 134, 134);
+   }
+  .thumbnail .description{
+    border: 2px solid black;
+    width: 80%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    border: none;
+  }
+  .descriptioninput::placeholder{
+   border: 1px solid black;
+   border: none;
+  }
+  .thumbnail .selectthumbnail{
+    width: 5%;
+    margin-left:30px;
+    margin-right: 10px;
+  
+  }
+  .selectthumbnail .iconplus{
+    box-shadow: 10px 10px 10px rgb(124, 118, 118);
+  }
+  
+  .description .descriptioninput{
+    width: 100%;
+    height: 100%;
+    max-height: 100px;
+    border: none;
+  }
+  }
+
+  
