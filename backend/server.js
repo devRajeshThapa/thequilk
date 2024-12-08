@@ -175,10 +175,6 @@ app.get("/upload/file/people/:id", async (req, res) => {
 
 app.post("/upload/file/login", async (req, res) => {
   const { email, password } = req.body;
-
-  console.log("Received email:", email);  // Log the received email
-  console.log("Received password:", password);  // Log the received password
-
   const userexist = await usermodel.findOne({ email });
   if (!userexist) {
     return res.status(400).json({ message: "Email or password doesn't match" });
@@ -246,8 +242,6 @@ app.post("/upload/file", uploadmiddleware, async (req, res) => {
   const fileImages = file.map((current) => {
     return `upload/${current.filename}`;
   });
-  console.log(fileImages);
-
   // Extract the userId from the JWT token sent in the headers
   const token = req.headers["authorization"]?.split(" ")[1];
   if (!token) {
@@ -287,7 +281,6 @@ app.post("/upload/file", uploadmiddleware, async (req, res) => {
 });
 app.post("/upload/file/wishlist", async (req, res) => {
   const { postid } = req.body;
-  console.log(postid)
   const token = req.headers["authorization"]?.split(" ")[1];
   
   if (!token) {
