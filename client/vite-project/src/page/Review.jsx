@@ -229,10 +229,10 @@ export default function Review() {
                     current.endsWith(".png") ||
                     current.endsWith(".jpg") ||
                     current.endsWith(".jpeg") ||
-                    current.url.endsWith(".svg") ||
-                    current.url.endsWith(".gif") ||
-                    current.url.endsWith(".webp") ||
-                    current.url.endsWith(".avif")
+                    current.endsWith(".svg") ||
+                    current.endsWith(".gif") ||
+                    current.endsWith(".webp") ||
+                    current.endsWith(".avif")
                   ) {
                     return (
                       <img
