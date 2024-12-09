@@ -108,7 +108,13 @@ export default function Review() {
             {selectedimage &&
               (typeof selectedimage === "object" && selectedimage.url ? (
                 <>
-                  {selectedimage.url.endsWith(".png") ? (
+                  {selectedimage.url.endsWith(".png") ||
+                  selectedimage?.endsWith(".jpg") ||
+                  selectedimage?.endsWith(".jpeg") ||
+                  selectedimage?.endsWith(".svg") ||
+                  selectedimage?.endsWith(".webp") ||
+                  selectedimage?.endsWith(".gif") ||
+                  selectedimage?.endsWith(".avif") ? (
                     <a
                       href={selectedimage.links}
                       target="_blank"
@@ -139,7 +145,13 @@ export default function Review() {
                 </>
               ) : (
                 <>
-                  {selectedimage?.endsWith(".png") ? (
+                  {selectedimage?.endsWith(".png") ||
+                  selectedimage?.endsWith(".jpg") ||
+                  selectedimage?.endsWith(".jpeg") ||
+                  selectedimage?.endsWith(".svg") ||
+                  selectedimage?.endsWith(".webp") ||
+                  selectedimage?.endsWith(".gif") ||
+                  selectedimage?.endsWith(".avif") ? (
                     <img
                       src={`http://${IP}:${PORT}/${selectedimage}`}
                       alt="Post"
@@ -181,7 +193,11 @@ export default function Review() {
                   if (
                     current.url.endsWith(".png") ||
                     current.url.endsWith(".jpg") ||
-                    current.url.endsWith(".jpeg")
+                    current.url.endsWith(".jpeg") ||
+                    current.url.endsWith(".svg") ||
+                    current.url.endsWith(".gif") ||
+                    current.url.endsWith(".webp") ||
+                    current.url.endsWith(".avif")
                   ) {
                     return (
                       <img
@@ -212,7 +228,11 @@ export default function Review() {
                   if (
                     current.endsWith(".png") ||
                     current.endsWith(".jpg") ||
-                    current.endsWith(".jpeg")
+                    current.endsWith(".jpeg") ||
+                    current.url.endsWith(".svg") ||
+                    current.url.endsWith(".gif") ||
+                    current.url.endsWith(".webp") ||
+                    current.url.endsWith(".avif")
                   ) {
                     return (
                       <img
