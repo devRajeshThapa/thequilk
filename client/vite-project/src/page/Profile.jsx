@@ -40,7 +40,6 @@ export default function Profile() {
         );
 
         // If token is valid, save the user data
-        alert(response.data.userId);
         setuserid(response.data.userId);
       } catch (error) {
 
