@@ -180,7 +180,7 @@ export default function Profile() {
 
       setfilterdata(filterdata);
     }
-  }, [postdata]);
+  }, []);
 
   const handleinfodiv = (e, id) => {
     e.stopPropagation();
