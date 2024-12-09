@@ -40,9 +40,8 @@ export default function Profile() {
         );
 
         // If token is valid, save the user data
-        setuserid(response.data.userId);
+        setuserid(`${await response.data.userId}`)
       } catch (error) {
-
         navigate("/login");
       }
     };
@@ -124,7 +123,7 @@ export default function Profile() {
     }
 
     try {
-      const response = await axios.post(
+      let response = await axios.post(
         `http://${IP}:${PORT}/upload/file`,
         formdata,
         {
@@ -135,7 +134,9 @@ export default function Profile() {
         }
       );
 
-      setfilterdata((prev) => [response.data.data, ...prev]); // Use spread operator with empty array as fallback
+      let res = await response;
+
+      setfilterdata((prev) => [res.data.data, ...prev]); // Use spread operator with empty array as fallback
 
       settitle("");
       setdescription("");
@@ -154,8 +155,8 @@ export default function Profile() {
       const response = await axios.delete(
         `http://${IP}:${PORT}/upload/file/${id}`
       );
-      const responseremaining = response.data.remainingPosts;
-      const remainalso = responseremaining.reverse();
+      const responseremaining = await response.data.remainingPosts;
+      const remainalso = await responseremaining.reverse();
       setpostdata(remainalso);
     } catch (error) {
       alert(error);
@@ -165,22 +166,21 @@ export default function Profile() {
     const fetchPosts = async () => {
       try {
         const response = await axios.get(`http://${IP}:${PORT}/upload/file`);
-        const dataset = response.data.datas;
+        const dataset = await response.data.datas;
         setpostdata(dataset.reverse()); // Set posts directly from the response
-      } catch (error) {
-      }
+      } catch (error) {}
     };
     fetchPosts();
   }, []);
   useEffect(() => {
     if (postdata.length > 0 && userid) {
-      const filterdata = postdata.filter(
-        (current) => current.createdBy._id === userid
-      );
-
-      setfilterdata(filterdata);
+      const filtereddata = postdata.filter((current) => {
+        console.log(current)
+        return current.createdBy._id === userid;
+      });
+      setfilterdata(filtereddata);
     }
-  }, []);
+  });
 
   const handleinfodiv = (e, id) => {
     e.stopPropagation();
