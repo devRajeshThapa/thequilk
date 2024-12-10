@@ -14,7 +14,7 @@ export default function Review() {
   const [infodata, setInfodata] = useState(null);
   const [mixdata, setMixdata] = useState([]);
   const [selectedimage, setselectedimage] = useState(null);
-  const [adsdata] = useState([
+  /*const [adsdata] = useState([
     {
       url: logo,
       links:
@@ -25,7 +25,7 @@ export default function Review() {
       links:
         "https://www.amazon.in/stores/page/FB61ADA2-F77A-413C-97C9-BB74C754829D?channel=Search_store_AMZ&gad_source=1&gclid=CjwKCAiA0rW6BhAcEiwAQH28IuBGGZOg5s-1L8qQdc2Lq_DIssCwnkpLxZotQc5tSAVPDD6ZS9DNSBoCoxMQAvD_BwE",
     },
-  ]);
+  ]);*/
 
   const navigate = useNavigate();
 

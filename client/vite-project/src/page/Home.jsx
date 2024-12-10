@@ -16,7 +16,7 @@ export default function Home() {
   const navigate = useNavigate();
   const [postdata, setpostdata] = useState([]);
   const [mixdata, setmixdata] = useState([]);
-  const [adsdata, setadsdata] = useState([
+  /*const [adsdata, setadsdata] = useState([
     {
       imgsrc: logo,
       title:
@@ -33,7 +33,7 @@ export default function Home() {
       title: "Here is the sponsor of the detail and know more about it.",
       profileimage: logo,
     },
-  ]);
+  ]);*/
 
   // Function to merge the post data and ads data
   const mixArray = (array1, array2) => {
