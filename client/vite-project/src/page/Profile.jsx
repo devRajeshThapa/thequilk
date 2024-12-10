@@ -171,7 +171,7 @@ export default function Profile() {
       } catch (error) {}
     };
     fetchPosts();
-  }, []);
+  });
   useEffect(() => {
     if (postdata.length > 0 && userid) {
       const filtereddata = postdata.filter((current) => {
